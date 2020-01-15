@@ -13,12 +13,26 @@ const objects = [
 const App = () => {
 	const [todoList, setTodoList] = useState(objects)
 
+	const addTodo = (todoText) => {
+		const newTodo = {
+			text: todoText,
+			done: false
+		}
+		setTodoList(todoList.concat([newTodo]));
+	}
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>My own todos</h1>
-		<InputRow />
+		<InputRow addFunction={addTodo} />
 		<TodoList todos={todoList} />
+		<button onClick={
+			()=> {
+				setTodoList(
+					[]
+				)
+		}}>Clear</button>
       </header>
     </div>
   );

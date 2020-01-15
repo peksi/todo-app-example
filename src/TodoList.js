@@ -14,9 +14,10 @@ export const TodoList = (props) => {
 		<div>
 			{
 				props.todos.map(
-					todo => {
+					(todo, index) => {
 						return( 
 						<Todo 
+							key={index}
 							done={todo.done}
 							text={todo.text}
 						/>
