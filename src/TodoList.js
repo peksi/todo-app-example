@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./App.css";
 
 const Todo = (props) => {
+	const [isDone, setDone] = useState(props.done);
+
+
 	return (
-		<div className={props.done ? 'done' : '' } >
+		<div 
+			onClick={() => {
+				const returnState = isDone ? false : true;
+				setDone(returnState)
+			}}
+			className={isDone ? 'done' : '' }
+		>
 			{props.text}
 		</div>
 	)
