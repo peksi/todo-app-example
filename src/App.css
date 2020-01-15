@@ -44,4 +44,9 @@ input, button {
     border: 0;
     margin: 10px;
 }
+
+.done {
+    text-decoration: line-through;
+    color: gray;
+}
  
