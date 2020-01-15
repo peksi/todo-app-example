@@ -9,12 +9,29 @@ const Todo = (props) => {
 	)
 }
 
+const objects = [
+	{text: "Do the dishes", done: false},
+	{text: "Laundry", done: false},
+	{text: "Learn some react", done: true},
+	{text: "Yet another", done: false}
+]
+
 export const TodoList = () => {
 	return (
 		<div>
-			<Todo done={false} text="Do the dishes" />
-			<Todo done={false} text="Laundry" />
-			<Todo done={true} text="Learn some react" />
+			{
+				objects.map(
+					todo => {
+						return( 
+						<Todo 
+							done={todo.done}
+							text={todo.text}
+						/>
+						)
+					}
+				)
+			}
+
 		</div>
 	)
 }
